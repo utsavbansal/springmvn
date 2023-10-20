@@ -2,12 +2,10 @@ package com.example.springmvndb.tasks;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping("/tasks/")
@@ -20,5 +18,10 @@ public class TasksController {
         tasksRepository.save(task);
         return ResponseEntity.ok(task);
     }
-
+    @GetMapping("/")
+    public ResponseEntity<List<TaskEntity>> getTasks()
+    {
+        List<TaskEntity> list=tasksRepository.findAll();
+        return ResponseEntity.ok(list);
+    }
 }
