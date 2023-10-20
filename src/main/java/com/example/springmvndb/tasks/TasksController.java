@@ -18,7 +18,7 @@ public class TasksController {
         tasksRepository.save(task);
         return ResponseEntity.ok(task);
     }
-    @GetMapping("/")
+    @GetMapping("/getTasks")
     public ResponseEntity<List<TaskEntity>> getTasks()
     {
         List<TaskEntity> list=tasksRepository.findAll();
