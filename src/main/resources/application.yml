@@ -10,6 +10,11 @@ spring:
       hibernate:
         format_sql=true:
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:file:./app    #store DB in testfile for testing purpose
-
+    #driver-class-name: org.h2.Driver
+    #url: jdbc:h2:file:./app    #store DB in testfile for testing purpose
+    #driver-class-name: org.h2.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #url: jdbc:h2:file:./app_test   #store DB in testfile for testing purpose
+    url: jdbc:mysql://localhost:3306/sai?
+    username: root
+    password: Root1234!
