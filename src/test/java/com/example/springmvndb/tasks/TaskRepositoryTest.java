@@ -12,11 +12,13 @@ public class TaskRepositoryTest {
     @Test
     void can_create_new_test(){
         tasksRepository.save(new TaskEntity("This is a simple task",new Date(),true));
+        System.out.println(tasksRepository.findAll());
     }
     @Test
     void can_save_and_retrieve_task(){
         tasksRepository.save(new TaskEntity("This is a another task",new Date(),true));
         TaskEntity task=tasksRepository.findById(2L).get();
         assert task.getName().equals("This is a another task");
+        System.out.println(task.getName());
     }
 }
